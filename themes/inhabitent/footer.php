@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying the footer.
+ * Template Name: About Page
  *
- * @package RED_Starter_Theme
+ * 
  */
 
 ?>

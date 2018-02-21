@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: About
  *
  * @package RED_Starter_Theme
  */
@@ -10,14 +10,16 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<header>
+				<div class="hero-image">
+					<div class="header-title-wrapper">
+						<h1 class="header-title"><?php echo get_the_title(16);?></h1>
+					</div>
+				</div>
+			</header>
 
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-
-			<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
