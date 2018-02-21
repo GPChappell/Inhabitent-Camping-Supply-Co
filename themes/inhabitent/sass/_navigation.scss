@@ -26,13 +26,18 @@ a {
 	}
 }
 
+/* Header */
+.site-header {
+	position: absolute;
+}
+
 /* Menus */
 
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	// clear: both;
+	// display: block;
+	// float: left;
+	// width: 100%;
 
 	ul {
 		display: none;

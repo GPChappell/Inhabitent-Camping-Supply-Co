@@ -16,12 +16,22 @@
 
 
 /*About Page*/
-.hero-image {
+.hero-image-full-page {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  & h1 {
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
 }
 
 .header-title-wrapper {
   display: inline-block;
+  height: auto;
+  width: auto;
 }

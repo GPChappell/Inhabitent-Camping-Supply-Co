@@ -50,10 +50,22 @@ add_filter('login_headertitle', 'inhabitent_login_title');
 
 //Update hero image on About page
 function update_about_page_hero_image() {
-	if( is_page_template('about.php') ) {
-		$hero_image = CFS()->get( 'header_image' );
-		$css = ".page-template-about {background-image: url('$hero_image'); height: 100vh;}";
-		wp_add_inline_style( 'red-starter-style', $css );
+	if( !is_page_template('about.php') ) {
+		return;
 	}
+
+	$hero_image = CFS()->get( 'header_image' );
+
+	if( !$hero_image ) {
+		return;
+	}
+
+	$css = ".page-template-about .hero-image-full-page {
+		background: 
+			linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  
+			url($hero_image) no-repeat bottom center;
+			background-size: cover, cover;}";
+	wp_add_inline_style( 'red-starter-style', $css );
+
 }
 add_action('wp_enqueue_scripts','update_about_page_hero_image');
