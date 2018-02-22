@@ -3,6 +3,44 @@
 --------------------------------------------------------------*/
 
 /* Front page */
+// SHOP
+.shop-category-area {
+  display: grid;
+  width: 100%;
+}
+
+.shop-category-wrapper {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  grid-gap: 1rem;
+  border: 1px solid $color__brand-light-grey;
+  border-top: 3px solid $color__brand-light-grey;
+
+
+}
+
+// JOURNAL POSTS
+.journal-posts-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  width: 100%
+}
+
+.journal-post {
+  // flex-basis: 30%;
+  height: 400px;
+  // margin: 0 2.5%;
+
+  // &:first-of-type {
+  //   margin-left: 0;
+  // }
+
+  // &:last-of-type {
+  //   margin-right: 0;
+  // }
+}
+
 
 
 

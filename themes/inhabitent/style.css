@@ -716,6 +716,25 @@ object {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
+.shop-category-area {
+  display: grid;
+  width: 100%; }
+
+.shop-category-wrapper {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  border: 1px solid #a1a1a1;
+  border-top: 3px solid #a1a1a1; }
+
+.journal-posts-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  width: 100%; }
+
+.journal-post {
+  height: 400px; }
+
 /* Footer */
 .site-footer {
   height: 300px;

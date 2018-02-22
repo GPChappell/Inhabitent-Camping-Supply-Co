@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About Page
+ * 
  *
  * 
  */
@@ -11,6 +11,9 @@
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
 				<div class="site-info">
+					<div class="footer-entry">
+						
+					</div>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 		</div><!-- #page -->

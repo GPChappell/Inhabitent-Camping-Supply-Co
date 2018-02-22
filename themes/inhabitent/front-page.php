@@ -18,12 +18,61 @@ get_header(); ?>
 				</header>
 			<?php endif; ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php /* SHOP CATEGORY */ ?>
+			<h2>Shop Stuff</h2>
+			<div class="shop-category-area">
+				<?php /* Retrieve Product Type Loop */ ?>
+				<?php
+					$args = array(
+										'taxonomy' => 'product_type',
+										'hide_empty' => 0
+										);
+					$terms = get_terms( $args );
+				?>
+				<?php d($terms); ?>
+				<?php foreach ( $terms as $term ) : ?>
+					<div class="shop-category-wrapper" >
+						<img src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name . ' category'; ?>"/>
+					</div>
+			</div>
+			<?php endforeach; wp_reset_postdata(); ?>
 
-				<?php get_template_part( 'template-parts/content' ); ?>
 
-			<?php endwhile; ?>
+			<h2>Inhabitent Journal</h2>
+			<?php /* Retrieve Journal Loop */ ?>
+			<?php
+				$args = array( 
+									'post_type' => 'post',
+									'order' => 'DESC',
+									'posts_per_page' => '3' );
+				$journal_posts = new WP_Query( $args ); // instantiate our object
+			?>
+
+			<?php if ( $journal_posts->have_posts() ) : ?>
+
+				<section class="journal-posts-area">
+
+					<?php while ( $journal_posts->have_posts() ) : $journal_posts->the_post(); ?>
+							<div class="journal-post">
+									<?php if( has_post_thumbnail() ) : ?>
+										<div class="journal-post__thumbnail">
+											<?php the_post_thumbnail('large'); ?>
+										</div>
+									<?php endif; ?>
+									<div class="entry-meta">
+										<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?>
+									</div><!-- .entry-meta -->
+									<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+							</div>	
+					<?php endwhile; ?>
+
+				</section>
+
+				<?php wp_reset_postdata(); ?>
+
+			<?php else : ?>
+						<h2>No Journal posts found!</h2>
+			<?php endif; ?>
 
 			<?php the_posts_navigation(); ?>
 
@@ -36,5 +85,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
