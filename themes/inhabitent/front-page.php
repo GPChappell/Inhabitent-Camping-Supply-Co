@@ -20,6 +20,7 @@ get_header(); ?>
 
 			<?php /* SHOP CATEGORY */ ?>
 			<h2>Shop Stuff</h2>
+			<p><?php echo is_page_template('front-page.php') ? 'yes' : 'no' ; ?></p>
 			<div class="shop-category-area">
 				<?php /* Retrieve Product Type Loop */ ?>
 				<?php
@@ -29,7 +30,6 @@ get_header(); ?>
 										);
 					$terms = get_terms( $args );
 				?>
-				<?php d($terms); ?>
 				<?php foreach ( $terms as $term ) : ?>
 					<div class="shop-category-wrapper" >
 						<img src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name . ' category'; ?>"/>

@@ -28,8 +28,51 @@ a {
 
 /* Header */
 .site-header {
-	position: absolute;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 3rem;
+	background: rgba(255,255,255,0.75);
+	border-bottom: 1px solid #e1e1e1;
 }
+
+.header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+.site-branding,
+.site-branding a,
+.site-branding a img {
+	height: 100%;
+}
+
+.site-branding a img {
+	padding: 0.4rem 0;
+}
+
+.menu-site-menu-container {
+	display: flex;
+	
+	a {
+		color: $color__brand-green;
+
+		&:hover {
+			color: black;
+		}
+	}
+
+	li {
+		padding-right: 1.5rem;
+		font-family: $font__accent;
+		text-transform: uppercase;
+	}
+}
+
+
+
 
 /* Menus */
 
