@@ -6,7 +6,7 @@
 
 a {
 	color: $color__link;
-	text-decoration-style: none;
+	text-decoration: none;
 
 	&:visited {
 		color: $color__link-visited;
@@ -34,10 +34,6 @@ a {
 /* Menus */
 
 .main-navigation {
-	// clear: both;
-	// display: block;
-	// float: left;
-	// width: 100%;
 
 	ul {
 		display: none;
