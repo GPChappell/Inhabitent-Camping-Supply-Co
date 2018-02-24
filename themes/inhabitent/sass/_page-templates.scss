@@ -3,17 +3,87 @@
 --------------------------------------------------------------*/
 
 /* Front page */
+//HEADINGS
+.home {
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+
+  }
+}
+
+//HERO
+.home-hero {
+  background: 
+    linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
+    url('../../images/home-hero.jpg') no-repeat top center / cover;
+  margin-bottom: 4.5rem;
+}
+
+
 // SHOP
 .shop-category-area {
-  display: grid;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-gap: 1rem;
+  display: flex;
   width: 100%;
 }
 
-.shop-category-wrapper {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  border: 1px solid $color__brand-light-grey;
-  border-top: 3px solid $color__brand-light-grey;
+.shop-category {
+  flex-basis: 23.5%;
+  height: 310px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border: $solid_border;
+  border-top: 5px solid #e1e1e1;
+
+  &:nth-of-type(4n+1) {
+    margin-left: 0;
+  }
+
+  &:nth-of-type(4n) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    border-color: $color__brand-orange;
+  }
+}
+
+.shop-category-image {
+  width: 33.33%;
+  margin: 0 auto;
+}
+
+.shop-category-description {
+  text-align: center;
+}
+
+.btn {
+  width: 50%;
+  margin: 1rem auto;
+
+  p a {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      padding: 0.5rem 0;
+      font-family: $font__accent;
+      font-size: 0.9rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+}
+
+.btn-green p a {
+  color: white;
+  background: $color__brand-green;
+
+  &:hover{
+    background: #19625d;
+  }
 }
 
 // JOURNAL POSTS
@@ -28,10 +98,11 @@
   height: 400px;
 }
 
+
 /* Footer */
 .site-footer {
   height: 22rem;
-  background: url("../../images/dark-wood.png")  left center / auto 100% repeat-x;
+  background: url('../../images/dark-wood.png')  left center / auto 100% repeat-x;
 }
 
 .footer-inner {

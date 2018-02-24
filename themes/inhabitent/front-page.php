@@ -18,9 +18,14 @@ get_header(); ?>
 				</header>
 			<?php endif; ?>
 
+			<div class="home-hero hero-image-full-page">
+				<div class="header-title-wrapper">
+					<img><img src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-full.svg" alt="Inhabitent Camping Supply Co Logo"/></img>
+				</div>
+			</div>
+
 			<?php /* SHOP CATEGORY */ ?>
 			<h2>Shop Stuff</h2>
-			<p><?php echo is_page_template('front-page.php') ? 'yes' : 'no' ; ?></p>
 			<div class="shop-category-area">
 				<?php /* Retrieve Product Type Loop */ ?>
 				<?php
@@ -31,11 +36,23 @@ get_header(); ?>
 					$terms = get_terms( $args );
 				?>
 				<?php foreach ( $terms as $term ) : ?>
-					<div class="shop-category-wrapper" >
-						<img src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name . ' category'; ?>"/>
-					</div>
+					<div class="shop-category" >
+
+						<div class="shop-category-image">
+							<img src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name . ' category'; ?>"/>
+						</div>
+
+						<p class="shop-category-description"><?php echo $term->description ?></p>
+
+						<div class="btn btn-green">
+							<p>
+								<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name . ' Stuff'; ?></a>
+							</p>
+						</div> <!-- shop-category-link -->
+
+					</div> <!-- shop-category -->
+				<?php endforeach; wp_reset_postdata(); ?>
 			</div>
-			<?php endforeach; wp_reset_postdata(); ?>
 
 
 			<h2>Inhabitent Journal</h2>

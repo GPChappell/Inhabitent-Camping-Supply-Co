@@ -31,9 +31,9 @@ a {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	height: 3rem;
+	height: 50px;
 	background: rgba(255,255,255,0.75);
-	border-bottom: 1px solid #e1e1e1;
+	border-bottom: $solid_border;
 }
 
 .header-inner {
@@ -50,7 +50,7 @@ a {
 }
 
 .site-branding a img {
-	padding: 0.4rem 0;
+	padding: 9px 0;
 }
 
 .menu-site-menu-container {
