@@ -60,7 +60,8 @@ dd {
 }
 
 img {
-	max-height: 100%; /* Make sure images are scaled correctly. */
+	height: auto;
+	// max-height: 100%; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
 

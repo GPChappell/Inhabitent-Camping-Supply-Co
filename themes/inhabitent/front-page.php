@@ -26,7 +26,7 @@ get_header(); ?>
 
 			<?php /* SHOP CATEGORY */ ?>
 			<h2>Shop Stuff</h2>
-			<div class="shop-category-area">
+			<section class="shop-category-area">
 				<?php /* Retrieve Product Type Loop */ ?>
 				<?php
 					$args = array(
@@ -36,7 +36,7 @@ get_header(); ?>
 					$terms = get_terms( $args );
 				?>
 				<?php foreach ( $terms as $term ) : ?>
-					<div class="shop-category" >
+					<div class="shop-category border-box-thick-top" >
 
 						<div class="shop-category-image">
 							<img src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name . ' category'; ?>"/>
@@ -52,7 +52,7 @@ get_header(); ?>
 
 					</div> <!-- shop-category -->
 				<?php endforeach; wp_reset_postdata(); ?>
-			</div>
+			</section>
 
 
 			<h2>Inhabitent Journal</h2>
@@ -70,16 +70,30 @@ get_header(); ?>
 				<section class="journal-posts-area">
 
 					<?php while ( $journal_posts->have_posts() ) : $journal_posts->the_post(); ?>
-							<div class="journal-post">
+							<div class="journal-post-block">
+								
 									<?php if( has_post_thumbnail() ) : ?>
-										<div class="journal-post__thumbnail">
+										<div class="journal-post-block__thumbnail">
 											<?php the_post_thumbnail('large'); ?>
 										</div>
 									<?php endif; ?>
-									<div class="entry-meta">
-										<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?>
-									</div><!-- .entry-meta -->
-									<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+									<div class="journal-post-block__text border-box-thick-top">
+										<div class="entry-meta">
+											<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?>
+										</div><!-- .entry-meta -->
+										<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+										<div class="btn btn-black uppercase">
+											<p>
+												<a href="<?php echo get_post_permalink( $journal_posts->id) ; ?>">Read Entry</a>
+											</p>
+										</div>
+
+									</div>
+
+
+
 							</div>	
 					<?php endwhile; ?>
 

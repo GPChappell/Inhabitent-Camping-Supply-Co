@@ -381,8 +381,7 @@ dd {
   margin: 0 1.5rem 1.5rem; }
 
 img {
-  max-height: 100%;
-  /* Make sure images are scaled correctly. */
+  height: auto;
   max-width: 100%;
   /* Adhere to container width. */ }
 
@@ -467,7 +466,7 @@ a {
   a:visited {
     color: purple; }
   a:hover, a:focus, a:active {
-    color: midnightblue;
+    color: #2f1339;
     -webkit-text-decoration-style: solid;
             text-decoration-style: solid; }
   a:focus {
@@ -778,19 +777,20 @@ object {
   width: 100%; }
 
 .shop-category {
-  -ms-flex-preferred-size: 23.5%;
-      flex-basis: 23.5%;
+  width: 23.5%;
   height: 310px;
   margin: 0 auto;
-  padding: 0.5rem;
-  border: 1px solid #e1e1e1;
-  border-top: 5px solid #e1e1e1; }
+  padding: 0.5rem; }
   .shop-category:nth-of-type(4n+1) {
     margin-left: 0; }
   .shop-category:nth-of-type(4n) {
     margin-right: 0; }
   .shop-category:hover {
     border-color: #d99054; }
+
+.border-box-thick-top {
+  border: 1px solid #e1e1e1;
+  border-top: 5px solid #e1e1e1; }
 
 .shop-category-image {
   width: 33.33%;
@@ -818,14 +818,58 @@ object {
   .btn-green p a:hover {
     background: #19625d; }
 
+.btn-black p a {
+  border: 1px solid black;
+  color: black;
+  background: white; }
+  .btn-black p a:hover {
+    border: none;
+    color: white;
+    background: #248A83; }
+
+.uppercase {
+  text-transform: uppercase; }
+
 .journal-posts-area {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%; }
 
-.journal-post {
-  height: 400px; }
+.journal-post-block {
+  width: 32%;
+  margin: 0 auto;
+  margin-bottom: 5rem; }
+  .journal-post-block:nth-of-type(3n+1) {
+    margin-left: 0; }
+  .journal-post-block:nth-of-type(3n) {
+    margin-right: 0; }
+
+.journal-post-block__thumbnail {
+  height: 240px; }
+  .journal-post-block__thumbnail img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.journal-post-block__text {
+  height: 170px;
+  padding: 0.5rem; }
+  .journal-post-block__text .entry-meta {
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+    font-size: 0.75rem; }
+  .journal-post-block__text .entry-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: left; }
+    .journal-post-block__text .entry-title a {
+      color: #248A83; }
+      .journal-post-block__text .entry-title a:hover {
+        color: #2f1339; }
 
 /* Footer */
 .site-footer {

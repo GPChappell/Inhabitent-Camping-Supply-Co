@@ -24,20 +24,15 @@
 
 // SHOP
 .shop-category-area {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
-  // grid-gap: 1rem;
   display: flex;
   width: 100%;
 }
 
 .shop-category {
-  flex-basis: 23.5%;
+  width: 23.5%;
   height: 310px;
   margin: 0 auto;
   padding: 0.5rem;
-  border: $solid_border;
-  border-top: 5px solid #e1e1e1;
 
   &:nth-of-type(4n+1) {
     margin-left: 0;
@@ -50,6 +45,11 @@
   &:hover {
     border-color: $color__brand-orange;
   }
+}
+
+.border-box-thick-top {
+  border: $solid_border;
+  border-top: 5px solid #e1e1e1;
 }
 
 .shop-category-image {
@@ -86,16 +86,78 @@
   }
 }
 
-// JOURNAL POSTS
-.journal-posts-area {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  width: 100%
+.btn-black p a {
+  border: 1px solid black;
+  color: black;
+  background: white;
+
+  &:hover{
+    border: none;
+    color: white;
+    background: $color__brand-green;
+  }
 }
 
-.journal-post {
-  height: 400px;
+.uppercase {
+  text-transform: uppercase;
+}
+
+// JOURNAL POSTS
+.journal-posts-area {
+  display: flex;
+  width: 100%;
+}
+
+.journal-post-block {
+  // height: 400px;
+  width: 32%;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+
+  &:nth-of-type(3n+1) {
+    margin-left: 0;
+  }
+
+  &:nth-of-type(3n) {
+    margin-right: 0;
+  }
+}
+
+.journal-post-block__thumbnail {
+  height: 240px;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.journal-post-block__text {
+  height: 170px;
+  padding: 0.5rem;
+
+  & .entry-meta {
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+    font-size: 0.75rem;
+  }
+
+  & .entry-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: left;
+
+    a {
+      color: $color__brand-green;
+
+      &:hover {
+        color: #2f1339;
+      }
+    }
+  }
 }
 
 
