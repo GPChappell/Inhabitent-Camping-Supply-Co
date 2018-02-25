@@ -8,6 +8,13 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+
+		<div class="home-hero hero-image-full-page">
+			<div class="header-title-wrapper">
+				<img><img src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-full.svg" alt="Inhabitent Camping Supply Co Logo"/></img>
+			</div>
+		</div>
+
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -18,86 +25,90 @@ get_header(); ?>
 				</header>
 			<?php endif; ?>
 
-			<div class="home-hero hero-image-full-page">
-				<div class="header-title-wrapper">
-					<img><img src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-full.svg" alt="Inhabitent Camping Supply Co Logo"/></img>
+			<!-- SHOP -->
+			<section class="shop">
+				<h2>Shop Stuff</h2>
+				<div class="shop-category-area">
+					<?php /* Retrieve Product Type Loop */ ?>
+					<?php
+						$args = array(
+											'taxonomy' => 'product_type',
+											'hide_empty' => 0
+											);
+						$terms = get_terms( $args );
+					?>
+					<?php foreach ( $terms as $term ) : ?>
+						<div class="shop-category border-box-thick-top" >
+
+							<div class="shop-category-image">
+								<img src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name . ' category'; ?>"/>
+							</div>
+
+							<p class="shop-category-description"><?php echo $term->description ?></p>
+
+							<div class="btn btn-green">
+								<!-- <p> -->
+									<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name . ' Stuff'; ?></a>
+								<!-- </p> -->
+							</div> <!-- shop-category-link -->
+
+						</div> <!-- shop-category -->
+					<?php endforeach; wp_reset_postdata(); ?>
 				</div>
-			</div>
-
-			<?php /* SHOP CATEGORY */ ?>
-			<h2>Shop Stuff</h2>
-			<section class="shop-category-area">
-				<?php /* Retrieve Product Type Loop */ ?>
-				<?php
-					$args = array(
-										'taxonomy' => 'product_type',
-										'hide_empty' => 0
-										);
-					$terms = get_terms( $args );
-				?>
-				<?php foreach ( $terms as $term ) : ?>
-					<div class="shop-category border-box-thick-top" >
-
-						<div class="shop-category-image">
-							<img src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name . ' category'; ?>"/>
-						</div>
-
-						<p class="shop-category-description"><?php echo $term->description ?></p>
-
-						<div class="btn btn-green">
-							<p>
-								<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name . ' Stuff'; ?></a>
-							</p>
-						</div> <!-- shop-category-link -->
-
-					</div> <!-- shop-category -->
-				<?php endforeach; wp_reset_postdata(); ?>
 			</section>
+											
+			<!-- JOURNAL -->
+			<section class="journal">
+				<h2>Inhabitent Journal</h2>
+				<?php /* Retrieve Journal Posts Loop */ ?>
+				<?php
+					$args = array( 
+										'post_type' => 'post',
+										'order' => 'DESC',
+										'posts_per_page' => '3' );
+					$journal_posts = new WP_Query( $args ); // instantiate our object
+				?>
 
+				<?php if ( $journal_posts->have_posts() ) : ?>
+					
+					<div class="journal-posts-area">
 
-			<h2>Inhabitent Journal</h2>
-			<?php /* Retrieve Journal Loop */ ?>
-			<?php
-				$args = array( 
-									'post_type' => 'post',
-									'order' => 'DESC',
-									'posts_per_page' => '3' );
-				$journal_posts = new WP_Query( $args ); // instantiate our object
-			?>
+						<?php /* Process Posts */ ?>
+						<?php while ( $journal_posts->have_posts() ) : $journal_posts->the_post(); ?>
 
-			<?php if ( $journal_posts->have_posts() ) : ?>
+								<div class="journal-post-block">
+										<?php if( has_post_thumbnail() ) : ?>
+											<div class="journal-post-block__thumbnail">
+												<?php the_post_thumbnail('large'); ?>
+											</div>
+										<?php endif; ?>
 
-				<section class="journal-posts-area">
+										<div class="journal-post-block__text border-box-thick-top">
+											<div class="entry-meta">
+												<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?>
+											</div><!-- .entry-meta -->
+											<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-					<?php while ( $journal_posts->have_posts() ) : $journal_posts->the_post(); ?>
-							<div class="journal-post-block">
-								
-									<?php if( has_post_thumbnail() ) : ?>
-										<div class="journal-post-block__thumbnail">
-											<?php the_post_thumbnail('large'); ?>
+											<div class="btn btn-black uppercase">
+												<!-- <p> -->
+													<a href="<?php echo get_post_permalink( $journal_posts->id) ; ?>">Read Entry</a>
+												<!-- </p> -->
+											</div>
+
 										</div>
-									<?php endif; ?>
+								 </div> <!--journal-post-block -->
 
-									<div class="journal-post-block__text border-box-thick-top">
-										<div class="entry-meta">
-											<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?>
-										</div><!-- .entry-meta -->
-										<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+						<?php endwhile; ?>
+					</div>
 
-										<div class="btn btn-black uppercase">
-											<p>
-												<a href="<?php echo get_post_permalink( $journal_posts->id) ; ?>">Read Entry</a>
-											</p>
-										</div>
-
-									</div>
+			</section> <!-- END OF JOURNAL -->
+						
+			<!-- ADVENTURES -->
+			<section class="adventures">
+				<h2>Latest Adventures</h2>
 
 
-
-							</div>	
-					<?php endwhile; ?>
-
-				</section>
+			</section>
 
 				<?php wp_reset_postdata(); ?>
 

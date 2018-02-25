@@ -1,6 +1,58 @@
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+//GENERAL
+.site-main {
+  max-width: $content__fixed-width;
+  margin: 0 auto;
+}
+
+.hero-image-full-page {
+  width: 100vw;
+}
+
+.btn {
+  width: 50%;
+  max-width: 130px;
+
+  a {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0;
+      font-family: $font__accent;
+      font-size: 0.9rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+}
+
+.btn-green a {
+  color: white;
+  background: $color__brand-green;
+
+  &:hover{
+    background: #19625d;
+  }
+}
+
+.btn-black a {
+  border: 1px solid black;
+  color: black;
+  background: white;
+
+  &:hover{
+    border: none;
+    color: white;
+    background: $color__brand-green;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 
 /* Front page */
 //HEADINGS
@@ -9,7 +61,6 @@
     font-size: 2.4rem;
     font-weight: 400;
     text-align: center;
-
   }
 }
 
@@ -29,6 +80,7 @@
 }
 
 .shop-category {
+  position: relative;
   width: 23.5%;
   height: 310px;
   margin: 0 auto;
@@ -45,6 +97,13 @@
   &:hover {
     border-color: $color__brand-orange;
   }
+
+  .btn {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .border-box-thick-top {
@@ -55,52 +114,14 @@
 .shop-category-image {
   width: 33.33%;
   margin: 0 auto;
+
 }
 
 .shop-category-description {
   text-align: center;
 }
 
-.btn {
-  width: 50%;
-  margin: 1rem auto;
 
-  p a {
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      padding: 0.5rem 0;
-      font-family: $font__accent;
-      font-size: 0.9rem;
-      text-align: center;
-      text-transform: uppercase;
-    }
-}
-
-.btn-green p a {
-  color: white;
-  background: $color__brand-green;
-
-  &:hover{
-    background: #19625d;
-  }
-}
-
-.btn-black p a {
-  border: 1px solid black;
-  color: black;
-  background: white;
-
-  &:hover{
-    border: none;
-    color: white;
-    background: $color__brand-green;
-  }
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
 
 // JOURNAL POSTS
 .journal-posts-area {
@@ -133,8 +154,9 @@
 }
 
 .journal-post-block__text {
+  position: relative;
   height: 170px;
-  padding: 0.5rem;
+  padding: 0.75rem;
 
   & .entry-meta {
     margin: 0;
@@ -157,6 +179,12 @@
         color: #2f1339;
       }
     }
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
   }
 }
 
@@ -197,6 +225,8 @@
 
   & h2 {
     font-size: 1.2rem;
+    text-align: left;
+    font-weight: bold;
     line-height: 1;
     letter-spacing: 2px;
     margin: 0 0 0.25rem;

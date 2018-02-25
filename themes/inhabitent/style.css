@@ -759,6 +759,45 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+.site-main {
+  max-width: 1120px;
+  margin: 0 auto; }
+
+.hero-image-full-page {
+  width: 100vw; }
+
+.btn {
+  width: 50%;
+  max-width: 130px; }
+  .btn a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0;
+    font-family: "Novovento Sans", sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase; }
+
+.btn-green a {
+  color: white;
+  background: #248A83; }
+  .btn-green a:hover {
+    background: #19625d; }
+
+.btn-black a {
+  border: 1px solid black;
+  color: black;
+  background: white; }
+  .btn-black a:hover {
+    border: none;
+    color: white;
+    background: #248A83; }
+
+.uppercase {
+  text-transform: uppercase; }
+
 /* Front page */
 .home h2 {
   font-size: 2.4rem;
@@ -777,6 +816,7 @@ object {
   width: 100%; }
 
 .shop-category {
+  position: relative;
   width: 23.5%;
   height: 310px;
   margin: 0 auto;
@@ -787,6 +827,12 @@ object {
     margin-right: 0; }
   .shop-category:hover {
     border-color: #d99054; }
+  .shop-category .btn {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
 
 .border-box-thick-top {
   border: 1px solid #e1e1e1;
@@ -798,37 +844,6 @@ object {
 
 .shop-category-description {
   text-align: center; }
-
-.btn {
-  width: 50%;
-  margin: 1rem auto; }
-  .btn p a {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    padding: 0.5rem 0;
-    font-family: "Novovento Sans", sans-serif;
-    font-size: 0.9rem;
-    text-align: center;
-    text-transform: uppercase; }
-
-.btn-green p a {
-  color: white;
-  background: #248A83; }
-  .btn-green p a:hover {
-    background: #19625d; }
-
-.btn-black p a {
-  border: 1px solid black;
-  color: black;
-  background: white; }
-  .btn-black p a:hover {
-    border: none;
-    color: white;
-    background: #248A83; }
-
-.uppercase {
-  text-transform: uppercase; }
 
 .journal-posts-area {
   display: -webkit-box;
@@ -853,8 +868,9 @@ object {
        object-fit: cover; }
 
 .journal-post-block__text {
+  position: relative;
   height: 170px;
-  padding: 0.5rem; }
+  padding: 0.75rem; }
   .journal-post-block__text .entry-meta {
     margin: 0;
     padding: 0.5rem 0 0 0;
@@ -870,6 +886,10 @@ object {
       color: #248A83; }
       .journal-post-block__text .entry-title a:hover {
         color: #2f1339; }
+  .journal-post-block__text .btn {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem; }
 
 /* Footer */
 .site-footer {
@@ -898,6 +918,8 @@ object {
   width: 25%; }
   .footer-block h2 {
     font-size: 1.2rem;
+    text-align: left;
+    font-weight: bold;
     line-height: 1;
     letter-spacing: 2px;
     margin: 0 0 0.25rem;
