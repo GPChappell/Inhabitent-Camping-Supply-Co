@@ -2,6 +2,24 @@
 # Page Templates
 --------------------------------------------------------------*/
 //GENERAL
+.flex-area {
+  display: flex;
+}
+
+.flex-block {
+  width: 23.5%;
+  margin: 0 auto;
+
+  &:nth-of-type(4n+1) {
+    margin-left: 0;
+  }
+
+  &:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
+
 .site-main {
   max-width: $content__fixed-width;
   margin: 0 auto;
@@ -188,6 +206,17 @@
   }
 }
 
+//Product Type
+.tax-product_type{
+  h1 {
+    text-align: center;
+  }
+  p.product-type-description {
+    text-align: center;
+  }
+}
+
+
 
 /* Footer */
 .site-footer {
@@ -272,4 +301,61 @@
   display: inline-block;
   height: auto;
   width: auto;
+}
+
+//Product Type Archive
+.archive-title-wrapper {
+  margin-bottom: 3rem;
+  border-bottom: 1px dashed $color__brand-light-grey;
+}
+
+.product-type-product-display-area {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.product-type-product-block {
+
+  .product-type-product-text {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0.75rem
+  }
+    
+  .label {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px dotted black;
+
+    p {
+      display: inline-block;
+      margin: 0 0 -3px 0;
+      line-height: 1;
+      background: white;
+    }
+  }
+}
+
+.product-type-product-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+  }
 }

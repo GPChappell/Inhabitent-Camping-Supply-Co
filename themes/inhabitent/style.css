@@ -759,6 +759,19 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+.flex-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-block {
+  width: 23.5%;
+  margin: 0 auto; }
+  .flex-block:nth-of-type(4n+1) {
+    margin-left: 0; }
+  .flex-block:nth-of-type(4n) {
+    margin-right: 0; }
+
 .site-main {
   max-width: 1120px;
   margin: 0 auto; }
@@ -891,6 +904,12 @@ object {
     bottom: 0.75rem;
     left: 0.75rem; }
 
+.tax-product_type h1 {
+  text-align: center; }
+
+.tax-product_type p.product-type-description {
+  text-align: center; }
+
 /* Footer */
 .site-footer {
   height: 22rem;
@@ -960,3 +979,54 @@ object {
   display: inline-block;
   height: auto;
   width: auto; }
+
+.archive-title-wrapper {
+  margin-bottom: 3rem;
+  border-bottom: 1px dashed #a1a1a1; }
+
+.product-type-product-display-area {
+  margin-top: 2rem;
+  margin-bottom: 5rem; }
+
+.product-type-product-block .product-type-product-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  padding: 0.75rem; }
+
+.product-type-product-block .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px dotted black; }
+  .product-type-product-block .label p {
+    display: inline-block;
+    margin: 0 0 -3px 0;
+    line-height: 1;
+    background: white; }
+
+.product-type-product-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; }
+  .product-type-product-image-wrapper a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+    .product-type-product-image-wrapper a img {
+      height: 100%;
+      width: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -o-object-position: top;
+         object-position: top; }

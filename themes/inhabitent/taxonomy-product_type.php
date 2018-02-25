@@ -10,31 +10,54 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<?php /*Get page slug */ ?>
+		<?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
+
+		<div class="archive-title-wrapper">
+			<h1><?php echo $term->slug; ?></h1>
+			<p class="product-type-description"><?php echo $term->description; ?></p>
+		</div>
+
 		<?php if ( have_posts() ) : ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
+			<div class="product-type-product-display-area flex-area">
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+					<article class="product-type-product-block flex-block">
 
-				<?php get_template_part( 'template-parts/content' ); ?>
+						<?php if ( has_post_thumbnail() ) : ?>
 
-			<?php endwhile; ?>
+						<div class="product-type-product-image-wrapper">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<img src="<?php the_post_thumbnail_url(); ?>"/>
+							</a>
+						</div>
+						
+						<?php endif; ?>
 
-			<?php the_posts_navigation(); ?>
+						<div class="product-type-product-text border-box-thick-top">
+							<div class="label">
+								<p><?php the_title(); ?></p>
+								<p><?php echo '$' . CFS()->get( 'price' ); ?></p>
+							</div>
+						</div>
 
-		<?php else : ?>
+					</article><!-- #post-## -->
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<?php endwhile; ?>
+
+				<?php the_posts_navigation(); ?>
+
+		<?php else : ?>		
+
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+			</div>
 
 		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
