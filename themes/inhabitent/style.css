@@ -772,8 +772,10 @@ object {
     margin-right: 0; }
 
 .site-main {
+  min-height: calc(100vh - 22rem); }
+
+.fixed-width-content {
   max-width: 1120px;
-  min-height: calc(100vh - 22rem);
   margin: 0 auto; }
 
 .hero-image-full-page {
@@ -877,6 +879,7 @@ object {
   height: 240px; }
   .journal-post-block__thumbnail img {
     height: 100%;
+    width: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
 
@@ -1057,3 +1060,44 @@ object {
 
 .single-product .site-content {
   margin-top: calc( 50px); }
+
+.primary-sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.main-sidebar {
+  width: 75%;
+  padding-right: 3rem; }
+
+.sidebar {
+  width: 25%;
+  padding-left: 3rem;
+  border-left: 1px solid #e1e1e1; }
+
+.single-image-wrapper {
+  position: relative;
+  height: 540px; }
+  .single-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  .single-image-wrapper h1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 1rem 2rem;
+    background: #248A83; }
+  .single-image-wrapper .entry-meta {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: "Novovento Sans", sans-serif;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    background: #248A83; }
+  .single-image-wrapper h1,
+  .single-image-wrapper a,
+  .single-image-wrapper .entry-meta {
+    color: white; }

@@ -15,7 +15,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main fixed-width-content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -76,27 +76,28 @@ get_header(); ?>
 						<?php /* Process Posts */ ?>
 						<?php while ( $journal_posts->have_posts() ) : $journal_posts->the_post(); ?>
 
-								<div class="journal-post-block">
-										<?php if( has_post_thumbnail() ) : ?>
-											<div class="journal-post-block__thumbnail">
-												<?php the_post_thumbnail('large'); ?>
-											</div>
-										<?php endif; ?>
+							<div class="journal-post-block">
+								<?php if( has_post_thumbnail() ) : ?>
+									<div class="journal-post-block__thumbnail">
+										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+										<img src="<?php the_post_thumbnail_url(); ?>"/>
+										</a>
+									</div>
+								<?php endif; ?>
 
-										<div class="journal-post-block__text border-box-thick-top">
-											<div class="entry-meta">
-												<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?>
-											</div><!-- .entry-meta -->
-											<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+								<div class="journal-post-block__text border-box-thick-top">
+									<div class="entry-meta">
+										<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?>
+									</div><!-- .entry-meta -->
+									<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-											<div class="btn btn-black uppercase">
-												<!-- <p> -->
-													<a href="<?php echo get_post_permalink( $journal_posts->id) ; ?>">Read Entry</a>
-												<!-- </p> -->
-											</div>
-
-										</div>
-								 </div> <!--journal-post-block -->
+									<div class="btn btn-black uppercase">
+										<!-- <p> -->
+											<a href="<?php echo get_post_permalink( $journal_posts->id) ; ?>">Read Entry</a>
+										<!-- </p> -->
+									</div>
+								</div><!-- .journal-post-block__text -->
+							</div> <!--journal-post-block -->
 
 						<?php endwhile; ?>
 					</div>
