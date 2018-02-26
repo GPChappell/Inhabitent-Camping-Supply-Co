@@ -27,7 +27,7 @@ get_header(); ?>
 
 			<!-- SHOP -->
 			<section class="shop">
-				<h2>Shop Stuff</h2>
+				<h1>Shop Stuff</h1>
 				<div class="shop-category-area">
 					<?php /* Retrieve Product Type Loop */ ?>
 					<?php
@@ -59,7 +59,7 @@ get_header(); ?>
 											
 			<!-- JOURNAL -->
 			<section class="journal">
-				<h2>Inhabitent Journal</h2>
+				<h1>Inhabitent Journal</h1>
 				<?php /* Retrieve Journal Posts Loop */ ?>
 				<?php
 					$args = array( 
@@ -105,7 +105,7 @@ get_header(); ?>
 						
 			<!-- ADVENTURES -->
 			<section class="adventures">
-				<h2>Latest Adventures</h2>
+				<h1>Latest Adventures</h1>
 
 
 			</section>

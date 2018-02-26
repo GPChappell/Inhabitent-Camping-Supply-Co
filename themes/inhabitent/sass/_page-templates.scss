@@ -22,8 +22,11 @@
 
 .site-main {
   max-width: $content__fixed-width;
+  min-height: calc(100vh - #{ $footer__height } );
   margin: 0 auto;
 }
+
+
 
 .hero-image-full-page {
   width: 100vw;
@@ -75,10 +78,10 @@
 /* Front page */
 //HEADINGS
 .home {
-  h2 {
-    font-size: 2.4rem;
+  h1 {
     font-weight: 400;
     text-align: center;
+    color: $color__brand-purple;
   }
 }
 
@@ -220,7 +223,7 @@
 
 /* Footer */
 .site-footer {
-  height: 22rem;
+  height: $footer__height;
   background: url('../../images/dark-wood.png')  left center / auto 100% repeat-x;
 }
 
@@ -306,7 +309,7 @@
 //Product Type Archive
 .archive-title-wrapper {
   margin-bottom: 3rem;
-  border-bottom: 1px dashed $color__brand-light-grey;
+  border-bottom: $dashed_border;
 }
 
 .product-type-product-display-area {
@@ -358,4 +361,44 @@
     }
 
   }
+}
+
+
+//Single Product
+.product-price {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+.product {
+
+  h1 {
+    margin: 0;
+    color: $color__brand-orange;
+  }
+
+  & .product-image-wrapper {
+    display: inline-block;
+    width: 50%;
+  }
+
+  & .product-text-wrapper {
+    display: inline-block;
+    width: 49%;
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  & .btn {
+    display: inline-block;
+  }
+
+  //Font Awesome Icons
+  & svg.svg-inline--fa {
+    margin-right: 10px;
+  }
+}
+
+.single-product .site-content {
+  margin-top: calc( #{ $header__height }  );
 }

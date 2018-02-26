@@ -98,7 +98,7 @@ dfn {
   font-style: italic; }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.4em;
   margin: 0.67em 0; }
 
 mark {
@@ -286,8 +286,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Novovento Sans", sans-serif;
   clear: both;
-  text-transform: uppercase;
-  color: #2f1339; }
+  text-transform: uppercase; }
 
 /* Copy */
 p {
@@ -774,6 +773,7 @@ object {
 
 .site-main {
   max-width: 1120px;
+  min-height: calc(100vh - 22rem);
   margin: 0 auto; }
 
 .hero-image-full-page {
@@ -812,10 +812,10 @@ object {
   text-transform: uppercase; }
 
 /* Front page */
-.home h2 {
-  font-size: 2.4rem;
+.home h1 {
   font-weight: 400;
-  text-align: center; }
+  text-align: center;
+  color: #2f1339; }
 
 .home-hero {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../images/home-hero.jpg") no-repeat top center/cover;
@@ -982,7 +982,7 @@ object {
 
 .archive-title-wrapper {
   margin-bottom: 3rem;
-  border-bottom: 1px dashed #a1a1a1; }
+  border-bottom: 1px dashed #c8c8c8; }
 
 .product-type-product-display-area {
   margin-top: 2rem;
@@ -1030,3 +1030,30 @@ object {
          object-fit: cover;
       -o-object-position: top;
          object-position: top; }
+
+.product-price {
+  font-size: 1.8rem;
+  margin-top: 0; }
+
+.product h1 {
+  margin: 0;
+  color: #d99054; }
+
+.product .product-image-wrapper {
+  display: inline-block;
+  width: 50%; }
+
+.product .product-text-wrapper {
+  display: inline-block;
+  width: 49%;
+  margin: 0;
+  padding-left: 1.5rem; }
+
+.product .btn {
+  display: inline-block; }
+
+.product svg.svg-inline--fa {
+  margin-right: 10px; }
+
+.single-product .site-content {
+  margin-top: calc( 50px); }

@@ -31,7 +31,7 @@ a {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	height: 50px;
+	height: $header__height;
 	background: rgba(255,255,255,0.75);
 	border-bottom: $solid_border;
 }
