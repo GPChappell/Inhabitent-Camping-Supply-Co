@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area fixed-width-content">
+	<div id="primary" class="content-area fixed-width-content header-offset">
 		<main id="main" class="site-main" role="main">
 
 		<?php /*Get page slug */ ?>

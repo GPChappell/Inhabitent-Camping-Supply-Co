@@ -69,3 +69,11 @@ table {
 	margin: 0 0 $base__space-unit;
 	width: 100%;
 }
+
+label {
+	color: $color__brand-purple;
+	font-size: 1.1rem;
+	font-family: $font__accent;
+	margin-bottom: .5rem;
+	text-transform: uppercase;
+}

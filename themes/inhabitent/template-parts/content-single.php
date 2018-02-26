@@ -23,7 +23,7 @@
 </header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<p><?php echo wp_strip_all_tags( get_the_content() ) ?></p>
+		<?php echo get_the_content() ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html( 'Pages:' ),

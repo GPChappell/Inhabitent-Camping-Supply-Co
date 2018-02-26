@@ -7,15 +7,15 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-
-		<div class="home-hero hero-image-full-page">
-			<div class="header-title-wrapper">
-				<img><img src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-full.svg" alt="Inhabitent Camping Supply Co Logo"/></img>
-			</div>
+	<div class="home-hero hero-image-full-page">
+		<div class="header-title-wrapper">
+			<img><img src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-full.svg" alt="Inhabitent Camping Supply Co Logo"/></img>
 		</div>
+	</div>
 
-		<main id="main" class="site-main fixed-width-content" role="main">
+	<div id="primary" class="content-area fixed-width-content">
+
+		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
