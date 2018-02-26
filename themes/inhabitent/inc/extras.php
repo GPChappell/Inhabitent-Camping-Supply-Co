@@ -69,3 +69,11 @@ function update_about_page_hero_image() {
 
 }
 add_action('wp_enqueue_scripts','update_about_page_hero_image');
+
+//Display 16 posts on archive pages
+function modify_archive_query( $query ) {
+	if ( $query->is_archive() && $query->is_main_query() ) {
+					$query->set( 'posts_per_page', 16 );
+			}
+	}
+add_action( 'pre_get_posts', 'modify_archive_query' );

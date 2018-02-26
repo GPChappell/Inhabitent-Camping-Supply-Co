@@ -4,6 +4,7 @@
 //GENERAL
 .flex-area {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-block {
@@ -315,16 +316,32 @@
 .archive-title-wrapper {
   margin-bottom: 3rem;
   border-bottom: $dashed_border;
+  text-align: center;
+
+  ul.nav {
+    width: auto;
+    padding-left: 0;
+    margin-left: 0;
+
+    li {
+      display: inline-block;
+      font-family: $font__accent;
+      text-transform: uppercase;
+      margin: 0 1.5rem;
+    }
+  }
 }
 
-.product-type-product-display-area {
+.product-display-area {
   margin-top: 2rem;
   margin-bottom: 5rem;
 }
 
-.product-type-product-block {
+.product-block {
 
-  .product-type-product-text {
+  margin-bottom: 2rem;
+
+  .product-text {
     display: flex;
     align-items: center;
     height: 60px;
@@ -346,7 +363,7 @@
   }
 }
 
-.product-type-product-image-wrapper {
+.product-image-wrapper {
   position: relative;
   width: 100%;
   padding-bottom: 100%;

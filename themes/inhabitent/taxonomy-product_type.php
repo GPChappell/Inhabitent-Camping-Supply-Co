@@ -20,15 +20,15 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<div class="product-type-product-display-area flex-area">
+			<div class="product-display-area flex-area">
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<article class="product-type-product-block flex-block">
+					<article class="product-block flex-block">
 
 						<?php if ( has_post_thumbnail() ) : ?>
 
-						<div class="product-type-product-image-wrapper">
+						<div class="product-image-wrapper">
 							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 							<img src="<?php the_post_thumbnail_url(); ?>"/>
 							</a>
@@ -36,7 +36,7 @@ get_header(); ?>
 						
 						<?php endif; ?>
 
-						<div class="product-type-product-text border-box-thick-top">
+						<div class="product-text border-box-thick-top">
 							<div class="label">
 								<p><?php the_title(); ?></p>
 								<p><?php echo '$' . CFS()->get( 'price' ); ?></p>
