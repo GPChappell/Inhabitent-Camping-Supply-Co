@@ -774,14 +774,14 @@ GENERAL & MODULAR STYLING
 
 .site-main {
   min-height: calc(100vh - 22rem);
-  margin: 3rem 0; }
+  margin-bottom: 3rem; }
 
 .fixed-width-content {
   max-width: 1120px;
   margin: 0 auto; }
 
 .header-offset {
-  margin-top: calc( 50px); }
+  margin-top: calc( 50px + 3rem); }
 
 .btn {
   width: 50%;
@@ -827,18 +827,21 @@ GENERAL & MODULAR STYLING
 .border-box-thick-top {
   border: 1px solid #e1e1e1;
   border-top: 5px solid #e1e1e1; }
-  .border-box-thick-top .primary-sidebar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  .border-box-thick-top .main-sidebar {
-    width: 70%;
-    padding-right: 3rem; }
-  .border-box-thick-top .sidebar {
-    width: 30%;
-    margin-top: 50px;
-    padding-left: 3rem;
-    border-left: 1px solid #e1e1e1; }
+
+.primary-sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.main-sidebar {
+  width: 70%;
+  padding-right: 3rem; }
+
+.sidebar {
+  width: 30%;
+  margin-top: 50px;
+  padding-left: 3rem;
+  border-left: 1px solid #e1e1e1; }
 
 /**************************** 
 FRONT PAGE

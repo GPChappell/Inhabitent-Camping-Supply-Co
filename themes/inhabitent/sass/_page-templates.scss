@@ -23,7 +23,7 @@ GENERAL & MODULAR STYLING
 }
 .site-main {
   min-height: calc(100vh - #{ $footer__height } );
-  margin: 3rem 0;
+  margin-bottom: 3rem;
 }
 
 .fixed-width-content {
@@ -32,7 +32,7 @@ GENERAL & MODULAR STYLING
 }
 
 .header-offset {
-  margin-top: calc( #{$header__height } );
+  margin-top: calc( #{$header__height } + 3rem );
 }
 
 .btn {
@@ -92,23 +92,24 @@ GENERAL & MODULAR STYLING
 .border-box-thick-top {
   border: $solid_border;
   border-top: 5px solid #e1e1e1;
-
-  .primary-sidebar {
-    display: flex;
-  }
-  
-  .main-sidebar {
-    width: 70%;
-    padding-right: 3rem;
-  }
-  
-  .sidebar {
-    width: 30%;
-    margin-top: $header__height;
-    padding-left: 3rem;
-    border-left: $solid_border;
-  }
 }
+
+.primary-sidebar {
+  display: flex;
+}
+
+.main-sidebar {
+  width: 70%;
+  padding-right: 3rem;
+}
+
+.sidebar {
+  width: 30%;
+  margin-top: $header__height;
+  padding-left: 3rem;
+  border-left: $solid_border;
+}
+
 
 
 
