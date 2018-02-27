@@ -21,4 +21,9 @@
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
+
+	<div class="btn btn-black uppercase">
+		<a href="<?php echo get_permalink() ; ?>">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+	</div>
+	
 </article><!-- #post-## -->

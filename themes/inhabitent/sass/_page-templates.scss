@@ -23,6 +23,7 @@
 
 .site-main {
   min-height: calc(100vh - #{ $footer__height } );
+  margin: 3rem;
 }
 
 .fixed-width-content {
@@ -621,5 +622,10 @@
     color: $color__brand-purple;
     font-size: 2.1rem;
   }
+}
 
+
+//Search.php
+.search .page-header {
+  border-bottom: $solid_border;
 }

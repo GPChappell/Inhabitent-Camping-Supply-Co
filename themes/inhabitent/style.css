@@ -770,7 +770,8 @@ object {
     margin-right: 0; }
 
 .site-main {
-  min-height: calc(100vh - 22rem); }
+  min-height: calc(100vh - 22rem);
+  margin: 3rem; }
 
 .fixed-width-content {
   max-width: 1120px;
@@ -1211,3 +1212,6 @@ object {
 .static-page h2 {
   color: #2f1339;
   font-size: 2.1rem; }
+
+.search .page-header {
+  border-bottom: 1px solid #e1e1e1; }

@@ -7,8 +7,8 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area fixed-width-content primary-sidebar">
+		<main id="main" class="site-main main-sidebar header-offset" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -31,8 +31,13 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+		<h2><a href="./contact">FIND US</a></h2>
+		<p>We take camping very seriously.</p>
+		<p>Inhabitent Camping Supply Co. knows what it takes to outfit a camping trip right. From flannel shirts to artisanal axes, we’ve got your covered. Please contact us below with any questions comments or suggestions.</p>
+		<p>Send us email!</p>
+
 		</main><!-- #main -->
+		<?php get_sidebar(); ?>
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
