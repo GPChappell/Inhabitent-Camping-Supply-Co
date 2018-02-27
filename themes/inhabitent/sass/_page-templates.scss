@@ -23,7 +23,7 @@
 
 .site-main {
   min-height: calc(100vh - #{ $footer__height } );
-  margin: 3rem;
+  margin-bottom: 3rem;
 }
 
 .fixed-width-content {
@@ -624,8 +624,15 @@
   }
 }
 
-
 //Search.php
 .search .page-header {
   border-bottom: $solid_border;
+}
+
+//404.php
+.error-404 {
+
+  & .search-submit {
+    display: none;
+  }
 }

@@ -771,7 +771,7 @@ object {
 
 .site-main {
   min-height: calc(100vh - 22rem);
-  margin: 3rem; }
+  margin-bottom: 3rem; }
 
 .fixed-width-content {
   max-width: 1120px;
@@ -1215,3 +1215,6 @@ object {
 
 .search .page-header {
   border-bottom: 1px solid #e1e1e1; }
+
+.error-404 .search-submit {
+  display: none; }
