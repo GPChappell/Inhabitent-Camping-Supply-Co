@@ -989,6 +989,7 @@ object {
     .archive-title-wrapper ul.nav li {
       display: inline-block;
       font-family: "Novovento Sans", sans-serif;
+      font-size: 1.2rem;
       text-transform: uppercase;
       margin: 0 1.5rem; }
 
@@ -1198,3 +1199,11 @@ object {
 
 .business-hours-widget-class .day-of-week {
   font-weight: 700; }
+
+.static-page-text-wrapper {
+  width: 800px;
+  margin: 0 auto; }
+  .static-page-text-wrapper h2 {
+    color: #2f1339;
+    font-size: 2.1rem;
+    text-align: center; }
