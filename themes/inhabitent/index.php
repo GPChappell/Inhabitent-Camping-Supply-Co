@@ -7,8 +7,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area fixed-width-content primary-sidebar">
+		<main id="main" class="site-main main-sidebar header-offset" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -34,7 +34,8 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+		<?php get_sidebar(); ?>
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
