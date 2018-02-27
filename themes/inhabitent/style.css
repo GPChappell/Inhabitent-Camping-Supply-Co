@@ -754,6 +754,9 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+/**************************** 
+GENERAL & MODULAR STYLING
+*****************************/
 .flex-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -771,14 +774,14 @@ object {
 
 .site-main {
   min-height: calc(100vh - 22rem);
-  margin-bottom: 3rem; }
+  margin: 3rem 0; }
 
 .fixed-width-content {
   max-width: 1120px;
   margin: 0 auto; }
 
 .header-offset {
-  margin-top: calc( 50px + 3rem); }
+  margin-top: calc( 50px); }
 
 .btn {
   width: 50%;
@@ -809,10 +812,37 @@ object {
     color: white;
     background: #248A83; }
 
+.btn-white a {
+  border: 1px solid white;
+  color: white;
+  background: transparent; }
+  .btn-white a:hover {
+    border: none;
+    color: white;
+    background: #248A83; }
+
 .uppercase {
   text-transform: uppercase; }
 
-/* Front page */
+.border-box-thick-top {
+  border: 1px solid #e1e1e1;
+  border-top: 5px solid #e1e1e1; }
+  .border-box-thick-top .primary-sidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .border-box-thick-top .main-sidebar {
+    width: 70%;
+    padding-right: 3rem; }
+  .border-box-thick-top .sidebar {
+    width: 30%;
+    margin-top: 50px;
+    padding-left: 3rem;
+    border-left: 1px solid #e1e1e1; }
+
+/**************************** 
+FRONT PAGE
+*****************************/
 .home h1 {
   font-weight: 400;
   text-align: center;
@@ -842,10 +872,6 @@ object {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%); }
-
-.border-box-thick-top {
-  border: 1px solid #e1e1e1;
-  border-top: 5px solid #e1e1e1; }
 
 .shop-category-image {
   width: 33.33%;
@@ -907,7 +933,76 @@ object {
 .tax-product_type p.product-type-description {
   text-align: center; }
 
-/* Footer */
+.adventure {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  height: 600px; }
+  .adventure h2 {
+    color: white;
+    font-family: "Merriweather", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    text-transform: none;
+    text-align: left; }
+
+.adventure-item {
+  position: relative; }
+
+.adventure-item-text-wrapper {
+  padding: 1rem; }
+
+.adventure-canoe {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/canoe-girl.jpg") no-repeat top center/cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/canoe-girl.jpg") no-repeat top center/cover;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2; }
+  .adventure-canoe h2 {
+    font-size: 3rem; }
+
+.adventure-beach {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/beach-bonfire.jpg") no-repeat top center/cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/beach-bonfire.jpg") no-repeat top center/cover;
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 1; }
+  .adventure-beach h2 {
+    font-size: 2rem; }
+
+.adventure-mountain {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/mountain-hikers.jpg") no-repeat top center/cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/mountain-hikers.jpg") no-repeat top center/cover;
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1; }
+  .adventure-mountain h2 {
+    font-size: 1.5rem; }
+
+.adventure-nightsky {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/night-sky.jpg") no-repeat top center/cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/night-sky.jpg") no-repeat top center/cover;
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 1; }
+  .adventure-nightsky h2 {
+    font-size: 1.5rem; }
+
+.adventure-item-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+/**************************** 
+HEADER / NAVIGATION
+*****************************/
+.main-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+/**************************** 
+FOOTER
+*****************************/
 .site-footer {
   height: 22rem;
   background: url("../../images/dark-wood.png") left center/auto 100% repeat-x; }
@@ -954,7 +1049,9 @@ object {
   text-align: center;
   text-transform: uppercase; }
 
-/*About Page*/
+/**************************** 
+ABOUT.php
+*****************************/
 .hero-image-full-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -979,6 +1076,17 @@ object {
   height: auto;
   width: auto; }
 
+.static-page-text-wrapper {
+  width: 800px;
+  margin: 0 auto; }
+  .static-page-text-wrapper h2 {
+    color: #2f1339;
+    font-size: 2.1rem;
+    text-align: center; }
+
+/*************************************** 
+Taxonomy-Product_Type.php (Product Type)
+****************************************/
 .archive-title-wrapper {
   margin-bottom: 3rem;
   border-bottom: 1px dashed #c8c8c8;
@@ -1066,21 +1174,9 @@ object {
 .product svg.svg-inline--fa {
   margin-right: 10px; }
 
-.primary-sidebar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.main-sidebar {
-  width: 70%;
-  padding-right: 3rem; }
-
-.sidebar {
-  width: 30%;
-  margin-top: 50px;
-  padding-left: 3rem;
-  border-left: 1px solid #e1e1e1; }
-
+/**************************** 
+Single.php (Journal Post)
+*****************************/
 .single-image-wrapper {
   position: relative;
   height: 540px; }
@@ -1128,6 +1224,9 @@ object {
 .entry-footer {
   margin-top: 1rem; }
 
+/**************************** 
+Comment.php
+*****************************/
 .comment-author-avatar {
   margin-right: 1.5rem; }
   .comment-author-avatar img {
@@ -1201,20 +1300,21 @@ object {
 .business-hours-widget-class .day-of-week {
   font-weight: 700; }
 
-.static-page-text-wrapper {
-  width: 800px;
-  margin: 0 auto; }
-  .static-page-text-wrapper h2 {
-    color: #2f1339;
-    font-size: 2.1rem;
-    text-align: center; }
-
+/**************************** 
+Page.php
+*****************************/
 .static-page h2 {
   color: #2f1339;
   font-size: 2.1rem; }
 
+/**************************** 
+Search.php
+*****************************/
 .search .page-header {
   border-bottom: 1px solid #e1e1e1; }
 
+/**************************** 
+404.php
+*****************************/
 .error-404 .search-submit {
   display: none; }

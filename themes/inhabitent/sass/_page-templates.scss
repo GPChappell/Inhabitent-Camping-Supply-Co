@@ -1,7 +1,9 @@
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-//GENERAL
+/**************************** 
+GENERAL & MODULAR STYLING
+*****************************/ 
 .flex-area {
   display: flex;
   flex-wrap: wrap;
@@ -19,11 +21,9 @@
     margin-right: 0;
   }
 }
-
-
 .site-main {
   min-height: calc(100vh - #{ $footer__height } );
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 }
 
 .fixed-width-content {
@@ -32,7 +32,7 @@
 }
 
 .header-offset {
-  margin-top: calc( #{$header__height } + 3rem );
+  margin-top: calc( #{$header__height } );
 }
 
 .btn {
@@ -73,12 +73,48 @@
   }
 }
 
+.btn-white a {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+
+  &:hover{
+    border: none;
+    color: white;
+    background: $color__brand-green;
+  }
+}
+
 .uppercase {
   text-transform: uppercase;
 }
 
+.border-box-thick-top {
+  border: $solid_border;
+  border-top: 5px solid #e1e1e1;
 
-/* Front page */
+  .primary-sidebar {
+    display: flex;
+  }
+  
+  .main-sidebar {
+    width: 70%;
+    padding-right: 3rem;
+  }
+  
+  .sidebar {
+    width: 30%;
+    margin-top: $header__height;
+    padding-left: 3rem;
+    border-left: $solid_border;
+  }
+}
+
+
+
+/**************************** 
+FRONT PAGE
+*****************************/ 
 //HEADINGS
 .home {
   h1 {
@@ -87,15 +123,6 @@
     color: $color__brand-purple;
   }
 }
-
-//HERO
-// .home-hero {
-//   background: 
-//     linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
-//     url('../../images/home-hero.jpg') no-repeat top center / cover;
-//   margin-bottom: 4.5rem;
-// }
-
 
 // SHOP
 .shop-category-area {
@@ -130,11 +157,6 @@
   }
 }
 
-.border-box-thick-top {
-  border: $solid_border;
-  border-top: 5px solid #e1e1e1;
-}
-
 .shop-category-image {
   width: 33.33%;
   margin: 0 auto;
@@ -144,8 +166,6 @@
 .shop-category-description {
   text-align: center;
 }
-
-
 
 // JOURNAL POSTS
 .journal-posts-area {
@@ -223,9 +243,102 @@
   }
 }
 
+//Adventures
+.adventure {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  height: 600px;
+
+  h2 {
+    color: white;
+    font-family: $font__main;
+    font-weight: 400;
+    margin: 0;
+    text-transform: none;
+    text-align: left;
+  }
+}
+
+.adventure-item {
+  position: relative;
+}
+
+.adventure-item-text-wrapper {
+  padding: 1rem;
+}
+
+.adventure-canoe {
+  background:  
+    linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
+    url('../../../../uploads/canoe-girl.jpg') no-repeat top center / cover;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+.adventure-beach {
+  background: 
+  linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
+  url('../../../../uploads/beach-bonfire.jpg') no-repeat top center / cover;
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 1;
+
+  h2 {
+    font-size: 2rem;
+  }  
+}
+
+.adventure-mountain {
+  background: 
+  linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
+    url('../../../../uploads/mountain-hikers.jpg') no-repeat top center / cover;
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.adventure-nightsky {
+  background: 
+  linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
+    url('../../../../uploads/night-sky.jpg') no-repeat top center / cover;
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 1;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.adventure-item-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 
-/* Footer */
+
+/**************************** 
+HEADER / NAVIGATION
+*****************************/ 
+.main-navigation {
+  display: flex;
+}
+
+
+
+/**************************** 
+FOOTER
+*****************************/ 
 .site-footer {
   height: $footer__height;
   background: url('../../images/dark-wood.png')  left center / auto 100% repeat-x;
@@ -289,7 +402,11 @@
   text-transform: uppercase;
 }
 
-/*About Page*/
+
+
+/**************************** 
+ABOUT.php
+*****************************/ 
 .hero-image-full-page {
   display: flex;
   justify-content: center;
@@ -313,7 +430,23 @@
   width: auto;
 }
 
-//Product Type Archive
+.static-page-text-wrapper {
+
+  width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    color: $color__brand-purple;
+    font-size: 2.1rem;
+    text-align: center;
+  }
+}
+
+
+
+/*************************************** 
+Taxonomy-Product_Type.php (Product Type)
+****************************************/ 
 .archive-title-wrapper {
   margin-bottom: 3rem;
   border-bottom: $dashed_border;
@@ -387,13 +520,10 @@
   }
 }
 
-
-//Single Product
 .product-price {
   font-size: 1.8rem;
   margin-top: 0;
 }
-
 .product {
 
   h1 {
@@ -423,23 +553,11 @@
   }
 }
 
-//Single.php
-.primary-sidebar {
-  display: flex;
-}
 
-.main-sidebar {
-  width: 70%;
-  padding-right: 3rem;
-}
 
-.sidebar {
-  width: 30%;
-  margin-top: $header__height;
-  padding-left: 3rem;
-  border-left: $solid_border;
-}
-
+/**************************** 
+Single.php (Journal Post)
+*****************************/ 
 .single-image-wrapper {
 
   position: relative;
@@ -500,7 +618,11 @@
   margin-top: 1rem;
 }
 
-//Comment.php
+
+
+/**************************** 
+Comment.php
+*****************************/ 
 .comment-author-avatar {
   margin-right: 1.5rem;
 
@@ -576,7 +698,6 @@
   p {
     margin-bottom: 0.5rem;
   }
-
 }
 
 .custom-html-widget {
@@ -602,20 +723,11 @@
     font-weight: 700;
 }
 
-//About.php
-.static-page-text-wrapper {
 
-  width: 800px;
-  margin: 0 auto;
 
-  h2 {
-    color: $color__brand-purple;
-    font-size: 2.1rem;
-    text-align: center;
-  }
-}
-
-//Page.php
+/**************************** 
+Page.php
+*****************************/ 
 .static-page {
 
   h2 {
@@ -624,12 +736,20 @@
   }
 }
 
-//Search.php
+
+
+/**************************** 
+Search.php
+*****************************/ 
 .search .page-header {
   border-bottom: $solid_border;
 }
 
-//404.php
+
+
+/**************************** 
+404.php
+*****************************/ 
 .error-404 {
 
   & .search-submit {

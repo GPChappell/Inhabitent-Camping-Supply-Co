@@ -105,9 +105,43 @@ get_header(); ?>
 			</section> <!-- END OF JOURNAL -->
 						
 			<!-- ADVENTURES -->
-			<section class="adventures">
-				<h1>Latest Adventures</h1>
+			<h1>Latest Adventures</h1>
+			<section class="adventure">
+				<div class="adventure-item adventure-canoe">
+					<div class="adventure-item-text-wrapper">
+						<h2>Getting Back to Nature in a Canoe</h2>
+						<div class="btn btn-white uppercase">
+								<a href="">Read More</a>
+						</div>
+					</div>
+				</div>
 
+				<div class="adventure-item adventure-beach">
+					<div class="adventure-item-text-wrapper">
+						<h2>Getting Back to Nature in a Canoe</h2>
+						<div class="btn btn-white uppercase">
+								<a href="">Read More</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="adventure-item adventure-mountain">
+					<div class="adventure-item-text-wrapper">
+						<h2>Getting Back to Nature in a Canoe</h2>
+						<div class="btn btn-white uppercase">
+								<a href="">Read More</a>
+						</div>
+					</div>
+				</div>				
+
+				<div class="adventure-item adventure-nightsky">
+					<div class="adventure-item-text-wrapper">
+						<h2>Getting Back to Nature in a Canoe</h2>
+						<div class="btn btn-white uppercase">
+								<a href="">Read More</a>
+						</div>
+					</div>
+				</div>
 
 			</section>
 
