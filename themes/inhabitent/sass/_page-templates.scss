@@ -110,6 +110,10 @@ GENERAL & MODULAR STYLING
   border-left: $solid_border;
 }
 
+//Font Awesome Icons
+svg.svg-inline--fa {
+  margin-right: 10px;
+}
 
 
 
@@ -175,7 +179,6 @@ FRONT PAGE
 }
 
 .journal-post-block {
-  // height: 400px;
   width: 32%;
   margin: 0 auto;
   margin-bottom: 5rem;
@@ -245,7 +248,7 @@ FRONT PAGE
 }
 
 //Adventures
-.adventure {
+.adventure-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -253,79 +256,86 @@ FRONT PAGE
   width: 100%;
   height: 600px;
 
-  h2 {
-    color: white;
-    font-family: $font__main;
-    font-weight: 400;
-    margin: 0;
-    text-transform: none;
-    text-align: left;
+  .adventure-item {
+    position: relative;
+
+    &:nth-of-type(4n+1) {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+  
+      h2 {
+        font-size: 3rem;
+      }
+    }
+    &:nth-of-type(4n+2) {
+      grid-column: 3 / span 2;
+      grid-row: 1 / span 1;
+  
+      h2 {
+        font-size: 2rem;
+      }  
+    }
+    &:nth-of-type(4n+3) {
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1;
+  
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+    &:nth-of-type(4n) {
+      grid-column: 4 / span 1;
+      grid-row: 2 / span 1;
+  
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .adventure-item-text-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+
+      h2 {
+        color: white;
+        font-family: $font__main;
+        font-weight: 400;
+        // font-size: 3rem;
+        margin: 0;
+        text-transform: none;
+        text-align: left;
+      }
+    }
+
+    .adventure-item-image {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        max-width: none;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      &::after {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: rgba(0,0,0,.35);
+        content: "";
+      }
+    }
   }
 }
-
-.adventure-item {
-  position: relative;
-}
-
-.adventure-item-text-wrapper {
-  padding: 1rem;
-}
-
-.adventure-canoe {
-  background:  
-    linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
-    url('../../../../uploads/canoe-girl.jpg') no-repeat top center / cover;
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-
-  h2 {
-    font-size: 3rem;
-  }
-}
-
-.adventure-beach {
-  background: 
-  linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
-  url('../../../../uploads/beach-bonfire.jpg') no-repeat top center / cover;
-  grid-column: 3 / span 2;
-  grid-row: 1 / span 1;
-
-  h2 {
-    font-size: 2rem;
-  }  
-}
-
-.adventure-mountain {
-  background: 
-  linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
-    url('../../../../uploads/mountain-hikers.jpg') no-repeat top center / cover;
-  grid-column: 3 / span 1;
-  grid-row: 2 / span 1;
-
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-.adventure-nightsky {
-  background: 
-  linear-gradient( to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4) ),
-    url('../../../../uploads/night-sky.jpg') no-repeat top center / cover;
-  grid-column: 4 / span 1;
-  grid-row: 2 / span 1;
-
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-.adventure-item-text-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
 
 
 /**************************** 
@@ -342,6 +352,7 @@ FOOTER
 *****************************/ 
 .site-footer {
   height: $footer__height;
+  margin-top: 4rem;
   background: url('../../images/dark-wood.png')  left center / auto 100% repeat-x;
 }
 
@@ -757,3 +768,86 @@ Search.php
     display: none;
   }
 }
+
+
+/**************************** 
+Single-Adventure.php (Adventure Post)
+*****************************/ 
+.single-adventure {
+  
+  .byline {
+  font-family: $font__accent;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-block;
+  }
+}
+
+
+
+/**************************** 
+Archive-Adventure.php (Adventure Archive)
+*****************************/
+.post-type-archive-adventure {
+
+  .adventure-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .adventure-item {
+    position: relative;
+    max-width: 49%;
+    height: 600px;
+    flex: 0 1 49%;
+    margin-bottom: 1.5rem;
+    
+    .adventure-item-image {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        max-width: none;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      &::after {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: rgba(0,0,0,.35);
+        content: "";
+      }
+    }
+
+    .adventure-item-text-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+
+      h2 {
+        color: white;
+        font-family: $font__main;
+        font-weight: 400;
+        font-size: 3rem;
+        margin: 0;
+        text-transform: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+

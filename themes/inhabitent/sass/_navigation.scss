@@ -32,8 +32,9 @@ a {
 	top: 0;
 	width: 100%;
 	height: $header__height;
-	background: rgba(255,255,255,0.75);
+	background: rgba(255,255,255,0.85);
 	border-bottom: $solid_border;
+	z-index: 1;
 }
 
 .header-inner {

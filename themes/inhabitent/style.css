@@ -475,8 +475,9 @@ a {
   top: 0;
   width: 100%;
   height: 50px;
-  background: rgba(255, 255, 255, 0.75);
-  border-bottom: 1px solid #e1e1e1; }
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid #e1e1e1;
+  z-index: 1; }
 
 .header-inner {
   display: -webkit-box;
@@ -843,6 +844,9 @@ GENERAL & MODULAR STYLING
   padding-left: 3rem;
   border-left: 1px solid #e1e1e1; }
 
+svg.svg-inline--fa {
+  margin-right: 10px; }
+
 /**************************** 
 FRONT PAGE
 *****************************/
@@ -936,64 +940,68 @@ FRONT PAGE
 .tax-product_type p.product-type-description {
   text-align: center; }
 
-.adventure {
+.adventure-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 10px;
   width: 100%;
   height: 600px; }
-  .adventure h2 {
-    color: white;
-    font-family: "Merriweather", sans-serif;
-    font-weight: 400;
-    margin: 0;
-    text-transform: none;
-    text-align: left; }
-
-.adventure-item {
-  position: relative; }
-
-.adventure-item-text-wrapper {
-  padding: 1rem; }
-
-.adventure-canoe {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/canoe-girl.jpg") no-repeat top center/cover;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/canoe-girl.jpg") no-repeat top center/cover;
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2; }
-  .adventure-canoe h2 {
-    font-size: 3rem; }
-
-.adventure-beach {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/beach-bonfire.jpg") no-repeat top center/cover;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/beach-bonfire.jpg") no-repeat top center/cover;
-  grid-column: 3 / span 2;
-  grid-row: 1 / span 1; }
-  .adventure-beach h2 {
-    font-size: 2rem; }
-
-.adventure-mountain {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/mountain-hikers.jpg") no-repeat top center/cover;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/mountain-hikers.jpg") no-repeat top center/cover;
-  grid-column: 3 / span 1;
-  grid-row: 2 / span 1; }
-  .adventure-mountain h2 {
-    font-size: 1.5rem; }
-
-.adventure-nightsky {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../../../../uploads/night-sky.jpg") no-repeat top center/cover;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../uploads/night-sky.jpg") no-repeat top center/cover;
-  grid-column: 4 / span 1;
-  grid-row: 2 / span 1; }
-  .adventure-nightsky h2 {
-    font-size: 1.5rem; }
-
-.adventure-item-text-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; }
+  .adventure-grid .adventure-item {
+    position: relative; }
+    .adventure-grid .adventure-item:nth-of-type(4n+1) {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2; }
+      .adventure-grid .adventure-item:nth-of-type(4n+1) h2 {
+        font-size: 3rem; }
+    .adventure-grid .adventure-item:nth-of-type(4n+2) {
+      grid-column: 3 / span 2;
+      grid-row: 1 / span 1; }
+      .adventure-grid .adventure-item:nth-of-type(4n+2) h2 {
+        font-size: 2rem; }
+    .adventure-grid .adventure-item:nth-of-type(4n+3) {
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1; }
+      .adventure-grid .adventure-item:nth-of-type(4n+3) h2 {
+        font-size: 1.5rem; }
+    .adventure-grid .adventure-item:nth-of-type(4n) {
+      grid-column: 4 / span 1;
+      grid-row: 2 / span 1; }
+      .adventure-grid .adventure-item:nth-of-type(4n) h2 {
+        font-size: 1.5rem; }
+    .adventure-grid .adventure-item .adventure-item-text-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem; }
+      .adventure-grid .adventure-item .adventure-item-text-wrapper h2 {
+        color: white;
+        font-family: "Merriweather", sans-serif;
+        font-weight: 400;
+        margin: 0;
+        text-transform: none;
+        text-align: left; }
+    .adventure-grid .adventure-item .adventure-item-image {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow: hidden; }
+      .adventure-grid .adventure-item .adventure-item-image img {
+        height: 100%;
+        max-width: none;
+        position: relative;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%); }
+      .adventure-grid .adventure-item .adventure-item-image::after {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        content: ""; }
 
 /**************************** 
 HEADER / NAVIGATION
@@ -1008,6 +1016,7 @@ FOOTER
 *****************************/
 .site-footer {
   height: 22rem;
+  margin-top: 4rem;
   background: url("../../images/dark-wood.png") left center/auto 100% repeat-x; }
 
 .footer-inner {
@@ -1321,3 +1330,69 @@ Search.php
 *****************************/
 .error-404 .search-submit {
   display: none; }
+
+/**************************** 
+Single-Adventure.php (Adventure Post)
+*****************************/
+.single-adventure .byline {
+  font-family: "Novovento Sans", sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase; }
+
+.single-adventure .btn {
+  display: inline-block; }
+
+/**************************** 
+Archive-Adventure.php (Adventure Archive)
+*****************************/
+.post-type-archive-adventure .adventure-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.post-type-archive-adventure .adventure-item {
+  position: relative;
+  max-width: 49%;
+  height: 600px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 49%;
+          flex: 0 1 49%;
+  margin-bottom: 1.5rem; }
+  .post-type-archive-adventure .adventure-item .adventure-item-image {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+    .post-type-archive-adventure .adventure-item .adventure-item-image img {
+      height: 100%;
+      max-width: none;
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
+    .post-type-archive-adventure .adventure-item .adventure-item-image::after {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      content: ""; }
+  .post-type-archive-adventure .adventure-item .adventure-item-text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem; }
+    .post-type-archive-adventure .adventure-item .adventure-item-text-wrapper h2 {
+      color: white;
+      font-family: "Merriweather", sans-serif;
+      font-weight: 400;
+      font-size: 3rem;
+      margin: 0;
+      text-transform: none;
+      text-align: left; }
