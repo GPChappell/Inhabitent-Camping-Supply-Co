@@ -99,6 +99,8 @@ function red_starter_scripts() {
 
 	wp_enqueue_script( 'red-search', get_template_directory_uri() . '/build/js/search.min.js', array('jquery'), '', true );
 
+	wp_enqueue_script( 'header', get_template_directory_uri() . '/build/js/header.min.js', array('jquery'), '', true );
+
 	wp_enqueue_script( 'font-awesome-cdn', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js', '5.0.6' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

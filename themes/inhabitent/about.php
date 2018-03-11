@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div class="hero-image-full-page">
+		<div class="hero-image-full-page full-page-hero">
 			<div class="header-title-wrapper">
 				<h1><?php echo get_the_title( get_the_ID() );?></h1>
 			</div>

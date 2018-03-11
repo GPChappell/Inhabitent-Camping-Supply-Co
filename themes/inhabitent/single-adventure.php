@@ -10,7 +10,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
 		<?php if ( has_post_thumbnail() ) : ?>
-			<img src="<?php the_post_thumbnail_url( 'full' ); ?>"/>
+			<img class="full-page-hero" src="<?php the_post_thumbnail_url( 'full' ); ?>"/>
 		<?php endif; ?>
 
 		<main id="main" class="site-main fixed-width-content" role="main">

@@ -25,7 +25,7 @@
 
 					<div class="site-branding">
 						<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<a href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-tent.svg" alt="Inhabitent Camping Supply Co Logo"/></a>
+						<a href="<?php echo get_home_url() ?>"><img id="logo" src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-tent.svg" alt="Inhabitent Camping Supply Co Logo"/><img id="reverse-logo" src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-tent-white.svg" alt="Inhabitent Camping Supply Co Logo"/></a>
 						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 					</div><!-- .site-branding -->
 

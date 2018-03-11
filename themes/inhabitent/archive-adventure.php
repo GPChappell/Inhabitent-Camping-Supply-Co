@@ -25,7 +25,7 @@ get_header(); ?>
 
 						<div class="adventure-item-image">
 							<?php if ( has_post_thumbnail() ) : ?>
-								<img src="<?php the_post_thumbnail_url(); ?>"/>
+								<img class="full-page-hero" src="<?php the_post_thumbnail_url(); ?>"/>
 							<?php endif; ?>
 						</div>
 						<div class="adventure-item-text-wrapper">

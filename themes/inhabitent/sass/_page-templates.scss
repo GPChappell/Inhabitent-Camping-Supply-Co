@@ -345,6 +345,33 @@ HEADER / NAVIGATION
   display: flex;
 }
 
+.reverse-header {
+  background: transparent;
+  border-bottom: none;
+  color: white;
+  text-shadow: 1px 1px 2px #323232;
+
+  .menu-site-menu-container a {
+    color: white;
+  }
+
+  #reverse-logo {
+    display: inline-block;
+  }
+
+  #logo {
+    display: none;
+  }
+}
+
+#reverse-logo {
+  display: none;
+}
+
+// .reverse-nav-links {
+//   color: white;
+//   text-shadow: 1px 1px 2px #323232
+// }
 
 
 /**************************** 

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div class="home-hero hero-image-full-page">
+	<div class="home-hero hero-image-full-page full-page-hero">
 		<div class="header-title-wrapper">
 			<img><img src="<?php echo get_template_directory_uri() . '/images/' ?>inhabitent-logo-full.svg" alt="Inhabitent Camping Supply Co Logo"/></img>
 		</div>
