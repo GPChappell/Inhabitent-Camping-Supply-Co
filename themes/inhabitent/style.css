@@ -940,6 +940,13 @@ FRONT PAGE
 .tax-product_type p.product-type-description {
   text-align: center; }
 
+.adventure .see-more {
+  width: 230px;
+  max-width: none;
+  margin-top: 2.25rem; }
+  .adventure .see-more a {
+    font-size: 1.2rem; }
+
 .adventure-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -111,47 +111,6 @@ get_header(); ?>
 			</section> <!-- END OF JOURNAL -->
 						
 			<!-- ADVENTURES -->
-			<!-- <section class="adventure">
-				<h1>Latest Adventures</h1>
-				<div class="adventure-item adventure-canoe">
-					<div class="adventure-item-text-wrapper">
-						<h2>Getting Back to Nature in a Canoe</h2>
-						<div class="btn btn-white uppercase">
-								<a href="">Read More</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="adventure-item adventure-beach">
-					<div class="adventure-item-text-wrapper">
-						<h2>Getting Back to Nature in a Canoe</h2>
-						<div class="btn btn-white uppercase">
-								<a href="">Read More</a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="adventure-item adventure-mountain">
-					<div class="adventure-item-text-wrapper">
-						<h2>Getting Back to Nature in a Canoe</h2>
-						<div class="btn btn-white uppercase">
-								<a href="">Read More</a>
-						</div>
-					</div>
-				</div>				
-
-				<div class="adventure-item adventure-nightsky">
-					<div class="adventure-item-text-wrapper">
-						<h2>Getting Back to Nature in a Canoe</h2>
-						<div class="btn btn-white uppercase">
-								<a href="">Read More</a>
-						</div>
-					</div>
-				</div>
-
-			</section> -->
-
-			<!-- ADVENTURES -->
 			<section class="adventure">
 				<h1>Latest Adventures</h1>
 				<div class="adventure-grid">
@@ -187,6 +146,9 @@ get_header(); ?>
 					<?php endwhile; ?>
 					</div>
 					<?php wp_reset_postdata(); ?>
+					<div class="btn btn-green uppercase see-more">
+						<a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a>
+					</div>
 
 				<?php else : ?>
 					<h2>No Journal posts found!</h2>

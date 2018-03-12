@@ -249,6 +249,18 @@ FRONT PAGE
 }
 
 //Adventures
+.adventure {
+  .see-more {
+    width: 230px;
+    max-width: none;
+    margin-top: 2.25rem;
+
+    a {
+      font-size: 1.2rem;
+    }
+  }
+}
+
 .adventure-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
