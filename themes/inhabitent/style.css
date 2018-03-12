@@ -1009,15 +1009,57 @@ HEADER / NAVIGATION
 .main-navigation {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .main-navigation .search-submit {
+    padding: 0;
+    outline: none;
+    color: #248A83;
+    background: none; }
+  .main-navigation .search-field {
+    padding: 0 2px;
+    border: none;
+    outline: none;
+    color: #248A83;
+    font-family: "Novovento Sans", sans-serif;
+    text-transform: uppercase;
+    background: none; }
+    .main-navigation .search-field::-webkit-input-placeholder, .main-navigation .search-field:focus {
+      color: #248A83; }
+    .main-navigation .search-field:-ms-input-placeholder, .main-navigation .search-field:focus {
+      color: #248A83; }
+    .main-navigation .search-field::-ms-input-placeholder, .main-navigation .search-field:focus {
+      color: #248A83; }
+    .main-navigation .search-field::placeholder, .main-navigation .search-field:focus {
+      color: #248A83; }
+
+.site-header {
+  -webkit-transition: 0.25s;
+  transition: 0.25s; }
 
 .reverse-header {
   background: transparent;
   border-bottom: none;
   color: white;
   text-shadow: 1px 1px 2px #323232; }
+  .reverse-header .search-submit {
+    color: white; }
+  .reverse-header .search-field {
+    color: white; }
+    .reverse-header .search-field::-webkit-input-placeholder, .reverse-header .search-field:focus {
+      color: white; }
+    .reverse-header .search-field:-ms-input-placeholder, .reverse-header .search-field:focus {
+      color: white; }
+    .reverse-header .search-field::-ms-input-placeholder, .reverse-header .search-field:focus {
+      color: white; }
+    .reverse-header .search-field::placeholder, .reverse-header .search-field:focus {
+      color: white; }
   .reverse-header .menu-site-menu-container a {
     color: white; }
+    .reverse-header .menu-site-menu-container a:hover {
+      color: #e6e6e6; }
   .reverse-header #reverse-logo {
     display: inline-block; }
   .reverse-header #logo {

@@ -21,6 +21,7 @@ GENERAL & MODULAR STYLING
     margin-right: 0;
   }
 }
+
 .site-main {
   min-height: calc(100vh - #{ $footer__height } );
   margin-bottom: 3rem;
@@ -343,16 +344,63 @@ HEADER / NAVIGATION
 *****************************/ 
 .main-navigation {
   display: flex;
+  align-items: center;
+
+  .search-submit {
+    padding: 0;
+    outline: none;
+    color: $color__brand-green;
+    background: none;
+  }
+
+  .search-field {
+    padding: 0 2px;
+    border: none;
+    outline: none;
+    color: $color__brand-green;
+    font-family: $font__accent;
+    text-transform: uppercase;
+    background: none;
+
+    &::placeholder,
+    &:focus {
+      color: $color__brand-green;
+    }
+
+  }
+}
+
+.site-header {
+  transition: 0.25s;
 }
 
 .reverse-header {
+
   background: transparent;
   border-bottom: none;
   color: white;
   text-shadow: 1px 1px 2px #323232;
 
+  .search-submit {
+    color: white;
+  }
+
+  .search-field {
+    color: white;
+
+    &::placeholder,
+    &:focus {
+      color: white;
+    }
+
+  }
+
   .menu-site-menu-container a {
     color: white;
+
+    &:hover {
+      color: darken(white, 10% );
+    }
   }
 
   #reverse-logo {
@@ -368,10 +416,6 @@ HEADER / NAVIGATION
   display: none;
 }
 
-// .reverse-nav-links {
-//   color: white;
-//   text-shadow: 1px 1px 2px #323232
-// }
 
 
 /**************************** 
